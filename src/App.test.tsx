@@ -1,10 +1,14 @@
-import React from 'react'
-import { render, screen} from '@testing-library/react'
-import App from "./App"
+import React from 'react';
+import { beforeEach, describe, expect, test } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import App from "./App";
 
-describe("App component", () => {
-    it("renders correct heading", () => {
+describe("App renders test", () => {
+    test("Should show Magnificent Monkeys", () => {
         render(<App />)
-        expect(screen.getByRole("heading").textContent).toMatch(/our first test/i);
+
+        expect(screen.getByText(/magnificent monkeys/i)).toBeDefined();
     })
 })
+
+
